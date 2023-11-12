@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Mi Extensión de Edge",
+  "version": "1.0",
+  "description": "Abre una nueva pestaña con un buscador inicial",
+  "permissions": ["tabs"],
+  "chrome_url_overrides" : {
+    "newtab": "newtab/index.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
