@@ -1,16 +1,18 @@
+// script.js
 document.addEventListener('DOMContentLoaded', function() {
-    var searchForm = document.getElementById('searchForm');
-    var searchInput = document.getElementById('searchInput');
-
-    // script.js
     function showDateTime() {
         var now = new Date();
-        var dateTime = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
-        document.getElementById('dateTime').textContent = dateTime;
+        var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+        var date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+        document.getElementById('time').textContent = time;
+        document.getElementById('date').textContent = date;
     }
 
     showDateTime();
     setInterval(showDateTime, 1000); // Actualiza cada segundo
+
+    var searchForm = document.getElementById('searchForm');
+    var searchInput = document.getElementById('searchInput');
 
     searchForm.addEventListener('submit', function(e) {
         e.preventDefault();
